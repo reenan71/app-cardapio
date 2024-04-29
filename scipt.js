@@ -118,10 +118,32 @@ function removeItemCart(nomeItem){
     const item = cart[index];
     if(item.quantidade > 1 ){
       item.quantidade -= 1;
+      Toastify({
+        text: "Item removido com sucesso!",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+          background: "#ef4444",
+        },
+    }).showToast();
       updateCartModal();
       return;
     }
     cart.splice(index, 1);
+    Toastify({
+      text: "Item removido com sucesso!",
+      duration: 3000,
+      close: true,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: "#ef4444",
+      },
+  }).showToast();
     updateCartModal();
     
   }
